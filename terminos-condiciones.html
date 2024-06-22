@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad5b547072.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="src/img/logo.png" alt=""></a>
+            </div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"><img src="" alt=""></div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#">Celulares</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                         <ul class="sub-menu">
+                            <li><a href=""><span>Samsung</span></a></li>
+                            <li><a href=""><span>Motorola</span></a></li>
+                            <li><a href=""><span>Iphone</span></a></li>
+                         </ul>   
+                    </li>
+                    <li class="dropdown"><a href="#">Accesorios</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href=""><span>Para tu celu</span></a></li>
+                            <li><a href=""><span>Audio</span></a></li>
+                            <li><a href=""><span>Smartwatches</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" id="searchInput" placeholder="Buscar">
+                        <button type="button" class="search-btn icon-btn" onclick="searchProducts()"><i class="fa-solid fa-search"></i></button>
+                    </form>
+                  </div>
+                <button type="button" class="cart-btn icon-btn">
+                    <a href="./carrito.html"><i class="fa-solid fa-shopping-cart"></i><span class="number">0</span></a>
+                </button>
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="info-section">
+        <h1>¿En qué podemos ayudarte?</h1>
+        <h3>Encontrá la información que estás necesitando, sobre nosotros, preguntas frecuentes y mucho más...</h3>
+        <div class="info-content">
+            <aside>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="faqs.html">FAQ's</a></li>
+                <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+                <li><a href="politicas-privacidad.html">Políticas de privacidad</a></li>
+                <li><a href="politicas-devolucion.html">Políticas de devolución</a></li>
+            </aside>
+            <section>
+                
+                 <div class="terms-conditions">
+                    <h4>Términos y Condiciones de Compucell</h4>
+                    <p><span>Aceptación de los Términos:</span> Al acceder y utilizar nuestro sitio web, usted acepta cumplir con los siguientes términos y condiciones, así como todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguno de estos términos, le pedimos que no utilice nuestro sitio.</p>
+                    <p><span>Uso Apropiado del Sitio:</span> Este sitio web está destinado únicamente para uso personal y no comercial. No está permitido utilizar este sitio para ningún propósito ilegal o no autorizado.</p>
+                    <p><span>Información de la Cuenta:</span> Usted es responsable de mantener la confidencialidad de su cuenta y contraseña y por restringir el acceso a su computadora o dispositivo. Usted acepta ser responsable de todas las actividades que ocurran bajo su cuenta o contraseña.</p>
+                    <p><span>Precios y Pagos:</span> Los precios de los productos están sujetos a cambios sin previo aviso. Nos reservamos el derecho de modificar o descontinuar cualquier producto en cualquier momento sin previo aviso. Los pagos deben realizarse en el momento de la compra y pueden estar sujetos a impuestos y tarifas adicionales.</p>
+                    <p><span>Envíos:</span> Nos esforzamos por realizar envíos rápidos y seguros. Sin embargo, no podemos hacernos responsables de retrasos o daños causados durante el envío.</p>
+                    <p><span>Garantías y Devoluciones:</span> Todos nuestros productos están respaldados por garantías del fabricante. Consulte la política de garantía específica de cada producto. Las devoluciones están sujetas a nuestra política de devolución, que puede variar según el producto y las circunstancias.</p>
+                 </div>
+                 
+            </section>
+        </div>
+    
+       
+    </div>
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad5b547072.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo cell">
+                <a href=""><img src="src/img/logo.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+   
+    <main class="main-cart">
+       <h1 class="tittle-cart">Tu Carrito</h1>
+      
+        <div id="cart" class="cart">
+            <p id="empty-cart">Tu carrito está vacío</p>
+            <div id="cart-items-container" class="cart-items-container">
+                <div id="cart-item" class="cart-item">
+                    <div class="cart-article">
+                        <p class="article-title">Artículo</p>
+                        <div class="description-item">
+                            <img src="src/img/moto-e22.png" alt="">
+                            <p>Samsung Galaxy A04 128 GB</p>
+                        </div>
+                    </div>
+                    <div class="cant-items">
+                        <p class="article-title">Cantidad</p>
+                        <div><span>1</span><button><i class="fa-solid fa-trash" style="color: #000000;"></i></button></div>
+                    </div>
+                    <div class="item-price">
+                        <p class="article-title">Precio</p>
+                        <p>$199999</p>
+                    </div>
+                </div>
+                <div id="cart-item" class="cart-item">
+                    <div class="cart-article">
+                        <p class="article-title">Artículo</p>
+                        <div class="description-item">
+                            <img src="src/img/moto-e22.png" alt="">
+                            <p>Samsung Galaxy A04 128 GB</p>
+                        </div>
+                    </div>
+                    <div class="cant-items">
+                        <p class="article-title">Cantidad</p>
+                        <div><span>1</span><i class="fa-solid fa-trash" style="color: #000000;"></i></div>
+                    </div>
+                    <div class="item-price">
+                        <p class="article-title">Precio</p>
+                        <p>$199999</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cart-actions" class="summary">
+                <p class="summary-tittle">Resumen de compra</p>
+                <div class="summary-subtotal">
+                    <p class="summary-subtotal-tittle">Subtotal</p>
+                    <p class="summary-subtotal-price">$199999</p>
+                </div>
+                <div class="summary-total">
+                    <p class="summary-total-tittle">Total</p>
+                    <p>$199999</p>
+                </div>
+                <button class="buy-articles">Finalizar compra</button>
+            </div>
+           
+           
+        </div>
+    </main>
+    
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+    
+    <script src="js/cart.js"></script>
+</body>
+</html>

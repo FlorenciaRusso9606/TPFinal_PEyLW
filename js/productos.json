@@ -1,0 +1,130 @@
+[
+    {
+        "id":1,
+        "tipo": "Motorola",
+        "modelo":"Moto E22 64GB",
+        "precio":212400,
+        "img": "src/img/edge-40-neo-5g.png",
+        "descuento":29,
+        "cuotas sin interes":3
+    },
+    {
+        "id":2,
+        "tipo": "Samsung",
+        "modelo":"Galaxy A04e 64GB",
+        "img": "src/img/galaxy-a04e.png",
+        "precio":236000,
+        "descuento":39,
+        "cuotas sin interes":3
+    },
+    {
+        "id":3,
+        "tipo": "Samsung",
+        "modelo":"Galaxy A14 4G",
+        "img": "src/img/galaxy-a14-4g.png",
+        "precio":38000,
+        "descuento":32,
+        "cuotas sin interes":6
+    },
+    {
+        "id":4,
+        "tipo": "Samsung",
+        "modelo":"Galaxy A04 128GB",
+        "img": "src/img/galaxy-a04-128gb.png",
+        "precio":298000,
+        "descuento":33,
+        "cuotas sin interes":6
+    },
+    {
+        "id":5,
+        "tipo": "Samsung",
+        "modelo":"Galaxy A04s 128GB",
+        "img": "src/img/galaxy-a04s.png",
+        "precio":314000,
+        "descuento":35,
+        "cuotas sin interes":6
+    },
+    {
+        "id":6,
+        "tipo": "Motorola",
+        "modelo":"Moto G23 4G",
+        "img": "src/img/moto-g23.png",
+        "precio":358700,
+        "descuento":26,
+        "cuotas sin interes":6
+    },
+    {
+        "id":7,
+        "tipo": "Motorola",
+        "modelo":"Moto G14 4G",
+        "img": "src/img/moto-g14.png",
+        "precio":305000,
+        "descuento":23,
+        "cuotas sin interes":6
+    },
+    {
+        "id":8,
+        "tipo": "Samsung",
+        "modelo":"Galaxy A04 64GB",
+        "img": "src/img/galaxy-a04-64gb.png",
+        "precio":236000,
+        "descuento":39,
+        "cuotas sin interes":3
+    },
+    {
+        "id":9,
+        "tipo": "Motorola",
+        "modelo":"Moto G13 128GB 4G",
+        "img": "src/img/moto-g13-128gb.png",
+        "precio":272.800,
+        "descuento":8,
+        "cuotas sin interes":6
+    },
+    {
+        "id":10,
+        "tipo": "Samsung",
+        "img": "src/img/galaxy-a24.png",
+        "modelo":"Galaxy A24 4G",
+        "precio":554000,
+        "descuento":10,
+        "cuotas sin interes":6
+    },
+    {
+        "id":11,
+        "tipo": "Samsung",
+        "img": "src/img/galaxy-a14-5g.png",
+        "modelo":"Galaxy A14 5G",
+        "precio":397000,
+        "descuento":11,
+        "cuotas sin interes":6
+    },
+    {
+        "id":12,
+        "tipo": "Motorola",
+        "img": "src/img/edge-40-pro-5g.png",
+        "modelo":"Edge 40 Pro 5G",
+        "precio":1000000,
+        "descuento":25,
+        "cuotas sin interes":6
+    },
+    {
+        "id":13,
+        "tipo": "Motorola",
+        "img": "src/img/edge-40-neo-5g.png",
+        "modelo":"Edge 40 Neo 5G",
+        "precio":621400,
+        "descuento":11,
+        "cuotas sin interes":6
+    },
+    {
+        "id":14,
+        "tipo": "Samsung",
+        "img": "src/img/galaxy-a34-5g.png",
+        "modelo":"Galaxy A34 5G 128GB",
+        "precio":737000,
+        "descuento":15,
+        "cuotas sin interes":6
+    }
+
+
+]

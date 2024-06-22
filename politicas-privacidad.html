@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad5b547072.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="src/img/logo.png" alt=""></a>
+            </div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"><img src="" alt=""></div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#">Celulares</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                         <ul class="sub-menu">
+                            <li><a href=""><span>Samsung</span></a></li>
+                            <li><a href=""><span>Motorola</span></a></li>
+                            <li><a href=""><span>Iphone</span></a></li>
+                         </ul>   
+                    </li>
+                    <li class="dropdown"><a href="#">Accesorios</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href=""><span>Para tu celu</span></a></li>
+                            <li><a href=""><span>Audio</span></a></li>
+                            <li><a href=""><span>Smartwatches</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" id="searchInput" placeholder="Buscar">
+                        <button type="button" class="search-btn icon-btn" onclick="searchProducts()"><i class="fa-solid fa-search"></i></button>
+                    </form>
+                  </div>
+                <button type="button" class="cart-btn icon-btn">
+                    <a href="./carrito.html"><i class="fa-solid fa-shopping-cart"></i><span class="number">0</span></a>
+                </button>
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="info-section">
+        <h1>¿En qué podemos ayudarte?</h1>
+        <h3>Encontrá la información que estás necesitando, sobre nosotros, preguntas frecuentes y mucho más...</h3>
+        <div class="info-content">
+            <aside>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="">FAQ's</a></li>
+                <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+                <li><a href="politicas-privacidad.html">Políticas de privacidad</a></li>
+                <li><a href="politicas-devolucion.html">Políticas de devolución</a></li>
+            </aside>
+            <section>
+                <div class="privacy-policy">
+                   <h4>Política de Privacidad</h4>
+                   <p><span>Introducción:</span> Esta Política de Privacidad describe cómo CompuCell] recopila, utiliza y protege la información personal que usted proporciona al utilizar nuestro sitio web y nuestros servicios relacionados con la venta de celulares.</p>
+                    <p><span>Información que Recopilamos:</span> Podemos recopilar información personal que usted nos brinde voluntariamente al registrarse en nuestro sitio, realizar una compra, suscribirse a nuestro boletín informativo o participar en encuestas u otras actividades en línea. Esta información puede incluir su nombre, dirección de correo electrónico, dirección postal, número de teléfono, información de pago y preferencias de compra.</p>
+                    <p><span>Uso de la Información:</span> Utilizamos la información personal que recopilamos para procesar transacciones, brindar servicios de atención al cliente,personalizar su experiencia de compra, enviarle comunicaciones comerciales y mejorar nuestros productos y servicios. Nocompartiremos su información personal con terceros, excepto cuando sea necesario para cumplir con la ley o proteger nuestros derechos.</p>
+                    <p><span>Cookies y Tecnologías:</span> Similares Utilizamos cookies y otras tecnologías de seguimiento para mejorar la funcionalidad de nuestro sitio web y recopilar información sobre cómo los visitantes interactúan con él. Puede configurar su navegador para que rechace todas las cookies o le avise cuando se envíe una cookie. Sin embargo, si bloquea las cookies, es posible que algunas partes de nuestro sitio no funcionen correctamente.</p>
+                    <p><span>Seguridad de la Información:</span> Implementamos medidas de seguridad para proteger la información personal que recopilamos contra el acceso no autorizado, la divulgación o la alteración. Sin embargo, tenga en cuenta que ninguna transmisión de datos a través de Internet o almacenamiento electrónico es completamente segura, por lo que no podemos garantizar la seguridad absoluta de su información.</p>
+                    <p><span>Enlaces a Otros Sitios Web:</span> Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad o elcontenido de estos sitios. Le recomendamos que revise las políticas de privacidad de cualquier sitio web al que acceda desde el nuestro.</p>
+                    <p><span>Cambios en la Política de Privacidad:</span> Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento y sin previo aviso. Se recomienda revisar periódicamente esta página para estar al tanto de cualquier cambio.</p>
+                    <p><span>Consentimiento:</span> Al utilizar nuestro sitio web, usted acepta el procesamiento de su información personal de acuerdo con esta Política de Privacidad.</p>
+                    <p>Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos a través de compucell@gmail.com.</p>
+                 </div>                
+            </section>
+        </div>
+    
+       
+    </div>
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

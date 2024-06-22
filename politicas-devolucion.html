@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad5b547072.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="src/img/logo.png" alt=""></a>
+            </div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"><img src="" alt=""></div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#">Celulares</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                         <ul class="sub-menu">
+                            <li><a href=""><span>Samsung</span></a></li>
+                            <li><a href=""><span>Motorola</span></a></li>
+                            <li><a href=""><span>Iphone</span></a></li>
+                         </ul>   
+                    </li>
+                    <li class="dropdown"><a href="#">Accesorios</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href=""><span>Para tu celu</span></a></li>
+                            <li><a href=""><span>Audio</span></a></li>
+                            <li><a href=""><span>Smartwatches</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" id="searchInput" placeholder="Buscar">
+                        <button type="button" class="search-btn icon-btn" onclick="searchProducts()"><i class="fa-solid fa-search"></i></button>
+                    </form>
+                  </div>
+                <button type="button" class="cart-btn icon-btn">
+                    <a href="./carrito.html"><i class="fa-solid fa-shopping-cart"></i><span class="number">0</span></a>
+                </button>
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="info-section">
+        <h1>¿En qué podemos ayudarte?</h1>
+        <h3>Encontrá la información que estás necesitando, sobre nosotros, preguntas frecuentes y mucho más...</h3>
+        <div class="info-content">
+            <aside>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="faqs.html">FAQ's</a></li>
+                <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+                <li><a href="politicas-privacidad.html">Políticas de privacidad</a></li>
+                <li><a href="politicas-devolucion.html">Políticas de devolución</a></li>
+            </aside>
+            <section>
+                 <div class="return-policy">
+                    <h4>Políticas de cambio y devolución</h4> 
+                    <p>¿Tuviste algún inconveniente y querés cambiar o devolver el/los producto/s que compraste? <br>
+                        Antes que nada, queremos disculparnos por tal situación y hacerte saber que en todo momento del proceso te acompañaremos
+                        evacuando todo tipo de dudas que poseas y vayan surgiendo, e indicándote paso a paso de lo que debes hacer.</p>
+                    <p>Veamos, las cuestiones a tener en cuenta:</p>
+                        <p><span>1&#41 ¿Cuáles son las condiciones?</span> <br>
+                            -En caso de ARREPENTIMIENTO, debes notificarlo dentro de los 10 días hábiles contando desde la fecha que recibiste el producto, de la forma indicada por SYNA S.A <br>
+                            -En caso de FALLA DEL PRODUCTO, notificarlo dentro del plazo establecido para el producto que compraste, de la forma indicada por SYNA S.A. Si no la conoces podes chequearlo en el siguiente link. <br>
+                            -En caso de recibir PRODUCTO INCOMPLETO, notificarlo dentro de los 10 días hábiles contando desde la fecha que recibiste el producto recibido el producto. <br>
+                            -Es condición excluyente que el producto y su empaque estén en perfectas condiciones
+                        </p>
+                    <p><span>2&#41 ¿Cómo notificas el inconveniente?</span>
+                        <br>
+                        Deberás notificar el mismo vía mail a la siguiente dirección de correo electrónico: atencionalcliente@compucell.com.ar
+                        <br>
+                        Datos importantes a la hora de cargar la información en el correo a enviar:
+                        <br>
+                        - Indicar en Asunto: Numero de Pedido y Nombre y apellido del titular de la compra – Indicar en Cuerpo del mail:
+                        <br>
+                        - En el caso de ARREPENTIMIENTO: Indicar tal situación en el mismo.
+                        <br>
+                        - En el caso de FALLA del producto: Indicar falla que presenta el mismo, y en caso de ser posible adjuntar foto o video donde se pueda apreciar la misma.
+                        <br>
+                        En el caso de que el producto te llego INCOMPLETO: Indicar el faltante en el mismo. <br>
+
+                        - Adjuntar factura de compra (Requisito excluyente para reclamos de Teléfonos Celulares) <br>
+                        - Firmar con Nombre, Apellido, DNI y teléfono celular de contacto de quien envía el correo. Nuestro Equipo de ATENCION AL CLIENTE te contactara dentro de las 24hs hábiles de enviado este correo.
+                    </p>
+                    <p><span>3&#41 ¿Cómo entregas o envías tu producto?</span> <br>
+                        Deberás realizar la devolución por la misma vía. Si la gestión la realizas dentro del periodo de 10 días posteriores a recibida la compra, el envió es sin costo alguno. En caso de que se encuentre fuera de dicho periodo, el envío es con costo a cargo del cliente. <br>
+                        En el caso de no encontrarse geográficamente en una zona para realizar la devolución con retiro por domiciliole brindaremos la posibilidad de que envíe el producto a nuestro depósito por correo. El costo de envío correrá por cuenta del cliente.
+                    </p>
+                    <p><span>4&#41 ¿Cómo preparo mi producto para el envío?</span> <br>
+                        El producto tiene que estar con su envoltorio original y en perfectas condiciones tanto el producto como el packaging
+                    </p>
+                    <p><span>5&#41 Una vez enviado, entregado o retirado mi producto ¿Qué sucede?</span> <br>
+                        Una vez recibido el /los productos en nuestro centro de distribución, se le hará la revisión correspondiente sobre las condiciones del producto, verificando la coincidencia de lo comunicado por el cliente en el mail inicial del reclamo y el estado del mismo. Se definirá la resolución y se comunicara al cliente, dentro de las 48hs hábiles contando desde que el producto ingreso al centro de distribución.
+                    </p>
+                 </div>
+            </section>
+        </div>
+    
+       
+    </div>
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
