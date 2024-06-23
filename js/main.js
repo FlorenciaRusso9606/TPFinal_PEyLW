@@ -1,7 +1,7 @@
 
 
 /*************** PRODUCTS **************/
-
+// Array de productos
 const products=[
     {
         id:1,
@@ -132,22 +132,29 @@ const products=[
 
 
 ]
-
+// Elementos del DOM
 const productsContainer = document.querySelector("#products-container");
 const categoryBtn = document.querySelectorAll(".category-btn");
 const priceBtn = document.querySelectorAll(".price-btn");
 let addProductsBtn = document.querySelectorAll(".add-to-cart");
 const numberCart = document.getElementById("number");
-let selectedCategory = null;
-let selectedPriceRange = [0, 1500000];
+// Variables de estado
+let selectedCategory = null; // Categoría seleccionada
+let selectedPriceRange = [0, 1500000]; // Rango de precio seleccionado (por defecto, todos los productos)
+
+
+// Función para cargar y mostrar productos según los filtros
 function loadProducts(choseProducts){
-    productsContainer.innerHTML="";
-    choseProducts.forEach(product =>{
-        const div = document.createElement("div");
+    productsContainer.innerHTML=""; // Vaciar contenedor de productos
+    choseProducts.forEach(product =>{ //Iterar sobre cada producto del array
+        const div = document.createElement("div"); // Crear un div para cada producto
         div.classList.add("card");
+        // Calcular precio con descuento y formatear números
         const discountedPrice = Math.floor(product.precio - (product.precio * product.descuento / 100));
         const formattedDiscountedPrice = discountedPrice.toLocaleString("es-AR");
         const formattedOriginalPrice = product.precio.toLocaleString("es-AR");
+         // Agregar contenido HTML del producto al div creado
+
         div.innerHTML=`
             <h3>${product.tipo}</h3>
             <h4>${product.modelo}</h4>
@@ -167,34 +174,36 @@ function loadProducts(choseProducts){
             </div>
             <button type="button" class="add-to-cart" id="${product.id}" >Agregar al carrito</button>
             `;
-            productsContainer.append(div);
+            productsContainer.append(div); // Agregar el div al contenedor de productos
     })
-    updateaddProductBtn(addProductsBtn);
+    updateaddProductBtn(addProductsBtn); // Actualizar event listeners de botones "Agregar al carrito"
 }
 loadProducts(products);
 
-
+// Función para filtrar productos según categoría y rango de precios seleccionados
 function filterProducts() {
     const filteredProducts = products.filter(product => {
         const inCategory = selectedCategory ? product.tipo === selectedCategory : true;
         const inPriceRange = product.precio >= selectedPriceRange[0] && product.precio <= selectedPriceRange[1];
         return inCategory && inPriceRange;
     });
-    loadProducts(filteredProducts);
+    loadProducts(filteredProducts); // Cargar y mostrar los productos filtrados
 }
-
+// Event listeners para botones de categoría
 categoryBtn.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        categoryBtn.forEach(btn => btn.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-        selectedCategory = e.currentTarget.id === "all" ? null : e.currentTarget.id;
+    btn.addEventListener("click", (e) => {        
+        categoryBtn.forEach(btn => btn.classList.remove("active")); // Remover clase "active" de todos los botones
+        e.currentTarget.classList.add("active"); // Agregar clase "active" al botón clickeado
+        selectedCategory = e.currentTarget.id === "all" ? null : e.currentTarget.id; // Establecer categoría seleccionada
         filterProducts();
     });
 });
+// Event listeners para botones de rango de precios
 priceBtn.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        priceBtn.forEach(btn => btn.classList.remove("active"));
-        e.currentTarget.classList.add("active");
+        priceBtn.forEach(btn => btn.classList.remove("active")); // Remover clase "active" de todos los botones
+        e.currentTarget.classList.add("active"); // Agregar clase "active" al botón clickeado
+        // Establecer el rango de precios seleccionado basado en el texto del botón
         switch (e.currentTarget.textContent) {
             case "$0 - $300.000":
                 selectedPriceRange = [0, 300000];
@@ -217,22 +226,24 @@ priceBtn.forEach(btn => {
         filterProducts();
     });
 });
-
+// Función para actualizar event listeners de botones "Agregar al carrito"
 function updateaddProductBtn(){
-    addProductsBtn = document.querySelectorAll(".add-to-cart");
+    addProductsBtn = document.querySelectorAll(".add-to-cart"); // Seleccionar todos los botones "Agregar al carrito"
     addProductsBtn.forEach(btn =>{
         btn.addEventListener("click", addToCart)
     });
 }
-let cartProducts; 
-let cartProductsLS = localStorage.getItem("cart-products");
+// Variables para el carrito de compras
+let cartProducts; // Array que almacenará los productos agregados al carrito
+let cartProductsLS = localStorage.getItem("cart-products"); // Obtener productos del carrito almacenados en localStorage
+// Verificar si hay productos en el carrito en localStorage
 if(cartProductsLS){
-  cartProducts = JSON.parse(cartProductsLS);
-  refreshNumber();
+  cartProducts = JSON.parse(cartProductsLS); // Parsear productos de localStorage a objeto JavaScript
+  refreshNumber(); // Actualizar contador de productos en el carrito
 }else{
-    cartProducts = [];
+    cartProducts = []; // Si no hay productos en localStorage, inicializar el carrito como un array vacío
 }
-
+// Función para agregar un producto al carrito
 function addToCart(e){
     const idBtn = e.currentTarget.id;
     const addedProduct= products.find(product => product.id == idBtn);
@@ -251,23 +262,9 @@ function refreshNumber(){
     numberCart.innerText = newNumber;
 }
 
-/*********** FAQ's ***********/
-/*let accBox = document.querySelectorAll(".acc_box");
-console.log(accBox);
-let symbol = document.querySelectorAll(".symbol");
 
-accBox.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        if (item.classList.contains("active")) {
-            item.classList.remove("active");
-            item.querySelector(".symbol").textContent = "+";
-        } else {
-           /* accBox.forEach(eachItem => {
-                eachItem.classList.remove("active");
-                eachItem.querySelector(".symbol").textContent = "+";
-            });*/
-            /*item.classList.add("active");
-            item.querySelector(".symbol").textContent = "-";
-        }
-    });
-});*/
+
+
+
+
+

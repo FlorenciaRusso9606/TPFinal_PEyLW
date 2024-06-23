@@ -4,6 +4,7 @@ const emptyCartContainer  = document.getElementById("empty-cart");
 const cartItemsContainer = document.getElementById("cart-items-container");
 const cartActionsContainer = document.getElementById("cart-actions");
 let btnDeleteProducto = document.querySelectorAll(".delete-product");
+ const cart = document.getElementById("cart");
 const total = document.getElementById("total");
 function loadCartProducts(){
     if(cartProducts && cartProducts.length>0){
@@ -40,6 +41,8 @@ function loadCartProducts(){
         cartItemsContainer.append(div);
         })
     }else{
+        
+        cart.classList.remove("disabled");
         emptyCartContainer.classList.remove("disabled");
         cartItemsContainer.classList.add("disabled");
         cartActionsContainer.classList.add("disabled");
@@ -56,12 +59,21 @@ function updateDeleteProductBtn(){
 }
 loadCartProducts();
 
-function deleteToCart(e){
+function deleteToCart(e) {
     const idBtn = e.currentTarget.id;
-   const index = cartProducts.findIndex(product => product.id == idBtn);
-    cartProducts.splice(index, 1);
-    loadCartProducts();
-    localStorage.setItem("cart-products", JSON.stringify(cartProducts));
+    const index = cartProducts.findIndex(product => product.id == idBtn);
+    
+    // Verificar si el producto tiene más de una unidad en el carrito
+    if (cartProducts[index].cantidad > 1) {
+        // Si hay más de una unidad, simplemente decrementar la cantidad en 1
+        cartProducts[index].cantidad--;
+    } else {
+        // Si solo hay una unidad, eliminar el producto del carrito
+        cartProducts.splice(index, 1);
+    }
+    
+    loadCartProducts(); // Volver a cargar los productos del carrito en la interfaz
+    localStorage.setItem("cart-products", JSON.stringify(cartProducts)); // Actualizar localStorage
 }
 function updateTotal(){
     let calculated = cartProducts.reduce((acc, product)=> acc + (product.precio * product.cantidad), 0);

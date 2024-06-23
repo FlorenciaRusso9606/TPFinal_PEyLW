@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo cell">
+                <a href="index.html"><img src="src/img/logo.png" alt="logo"></a>
+            </div>
+        </div>
+    </header>
+    <div class="form-container">
+        <form id="payment-method-form">
+            <div class="div-form">
+                <h2>Método de pago</h2>
+                <label for="numero-tarjeta">Número de tarjeta de crédito o débito *</label>
+                <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+                <span id="numero-tarjeta-error" class="error"></span>
+    
+                <label for="fecha-expiracion">Fecha de expiración (MM/AAAA) *</label>
+                <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AAAA" required>
+                <span id="fecha-expiracion-error" class="error"></span>
+    
+                <label for="nombre-titular">Nombre del titular de la tarjeta *</label>
+                <input type="text" id="nombre-titular" name="nombre-titular" required>
+                <span id="nombre-titular-error" class="error"></span>
+    
+                <label for="codigo-seguridad">Código de seguridad (CVV) *</label>
+                <input type="text" id="codigo-seguridad" name="codigo-seguridad" required>
+                <span id="codigo-seguridad-error" class="error"></span>
+    
+                <label for="numero-documento">Número de documento</label>
+                <input type="text" id="numero-documento" name="numero-documento">
+                <span id="numero-documento-error" class="error"></span>
+                <div>
+                    <button class="buy-articles" onclick="window.location.href='form.html'">Atrás</button>
+                <button class="buy-articles" id="buy-articles" type="submit">Finalizar pedido</button>
+                </div>
+                
+            </div>
+    
+           
+        </form>
+        <div class="div-summary" id="summary">
+            <p class="summary-tittle">Resumen de su compra</p>
+            <div>
+                <p >Subtotal</p>
+                <p id="subtotal"></p>
+            </div>
+            <div>
+                <p>Envío/Retiro</p>
+                <p>¡Gratis!</p>
+            </div>
+            <div class="summary-total-t">
+                <p class="summary-total-tittle">Total</p>
+                <p id="total"></p>
+            </div>
+                
+        </div>
+        
+    </div>
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+<script src="js/form2.js"></script>
+</body>
+</html>

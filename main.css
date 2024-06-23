@@ -340,6 +340,14 @@ main div h1{
     color: rgb(231, 231, 231);
     cursor: pointer;
     height:  40px;
+
+}
+.buy-articles a{
+  color: rgb(231, 231, 231);;
+}
+.buy-articles a:hover{
+    color: white;
+    font-size: 16px;
 }
 .products-container .add-to-cart:hover, .buy-articles:hover{
     color: white;
@@ -693,7 +701,7 @@ footer div ul li{
     border-color: transparent;
     cursor: pointer;
     height:  40px;
-    width: 150px;
+    width: 170px;
     align-self: center;
     margin: 2rem 0;
 }
@@ -705,7 +713,7 @@ footer div ul li{
     color: white;
     font-size: 16px;
 }
-#payment-form{
+#payment-form, #payment-method-form{
     display: flex;
     flex-direction: column;
     width: 45%;
@@ -721,15 +729,16 @@ footer div ul li{
     margin: 1rem 0;
     padding: 0.5rem 1.5rem 2rem;
 }
+
 .div-form div{
     display: flex;
     justify-content: start;
     align-items: center;
 }
-#payment-form label{
+#payment-form label, #payment-method-form label{
     margin-top: 1rem;
 }
-#payment-form input, #payment-form select{
+#payment-form input, #payment-form select, #payment-method-form input{
     height: 30px;
 }
 .error {
@@ -774,9 +783,29 @@ footer div ul li{
  
  .product-description{
     margin: 1rem 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #282F35;
  }
 
 
-
-
+/**************** PURCHASE ****************/
+.successful-purchase {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    background-color: rgb(253, 253, 253);
+}
+.successful-purchase h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.successful-purchase p{
+    font-size: 20px;
+}
+.successful-purchase button {
+    margin-top: 20px; 
+}
    
