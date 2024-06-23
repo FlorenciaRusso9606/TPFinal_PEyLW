@@ -3,13 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="">
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre">
-        <input type="number">
-    </form>
+    <header class="header">
+        <div class="container">
+            <div class="logo cell">
+                <a href=""><img src="src/img/logo.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+    
+    <h1 class="resume-summary">Tu Compra</h1>
+    <div class="form-container">
+     
+        <form id="payment-form">
+            <div class="div-form">
+                <h2>Datos personales</h2>
+                <label for="email">Dirección de correo electrónico *</label>
+                <input type="email" id="email" name="email" required>
+                <span id="email-error" class="error"></span>
+    
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <span id="nombre-error" class="error"></span>
+    
+                <label for="apellido">Apellido *</label>
+                <input type="text" id="apellido" name="apellido" required>
+                <span id="apellido-error" class="error"></span>
+    
+                <label for="dni">DNI *</label>
+                <input type="text" id="dni" name="dni" required>
+                <span id="dni-error" class="error"></span>
+    
+                <label for="genero">Género *</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Seleccione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <span id="genero-error" class="error"></span>
+    
+                <label for="fecha-nacimiento">Fecha de nacimiento (DD/MM/AAAA) *</label>
+                <input type="text" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                <span id="fecha-nacimiento-error" class="error"></span>
+    
+                <label for="telefono">Número de teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}">
+                <span id="telefono-error" class="error"></span>
+            </div>
+            
+            <div class="div-form">
+                <h2>Domicilio *</h2>
+                <label for="calle">Calle *</label>
+                <input type="text" id="calle" name="calle" required>
+                <span id="calle-error" class="error"></span>
+    
+                <label for="altura">Altura *</label>
+                <input type="number" id="altura" name="altura" required>
+                <span id="altura-error" class="error"></span>
+    
+                <label for="piso">Piso </label>
+                <input type="text" id="piso" name="piso">
+                <span id="piso-error" class="error"></span>
+    
+                <label for="departamento">Departamento </label>
+                <input type="text" id="departamento" name="departamento">
+                <span id="departamento-error" class="error"></span>
+    
+                <label for="provincia">Provincia *</label>
+                <input type="text" id="provincia" name="provincia" required>
+                <span id="provincia-error" class="error"></span>
+    
+                <label for="localidad">Localidad *</label>
+                <input type="text" id="localidad" name="localidad" required>
+                <span id="localidad-error" class="error"></span>
+            </div>
+    
+            <div class="div-form">
+                <h2>Envío/Retiro</h2>
+                <div><p>Se entregará el equipo a la persona titular de la compra, con su DNI</p></div>
+                <label for="metodo-envio">Método de envío *</label>
+                <div>
+                    <input type="radio" id="envio-domicilio" name="metodo-envio" value="domicilio" required> Envío a Domicilio ¡GRATIS!
+                </div>
+                <div>
+                    <input type="radio" id="retiro-correo" name="metodo-envio" value="retiro" required> Retiro en correo
+                </div>
+                <span id="metodo-envio-error" class="error"></span>
+            </div>
+            <div>
+                <button class="buy-articles" onclick="window.location.href='cart.html'">Atrás</button>
+                <button type="submit"><a href="form2.html">Siguiente</a>
+                
+            </div>
+            
+        </form>
+        <div class="div-summary" id="summary">
+            <p class="summary-tittle">Resumen de su compra</p>
+            <div>
+                <p >Subtotal</p>
+                <p id="subtotal"></p>
+            </div>
+            <div>
+                <p>Envío/Retiro</p>
+                <p>¡Gratis!</p>
+            </div>
+            <div class="summary-total-t">
+                <p class="summary-total-tittle">Total</p>
+                <p id="total"></p>
+            </div>
+            <!--<div class="product-description" id="products-container">
+                <img src="src/img/edge-40-neo-5g.png" alt="">
+                <p>descripcion del producto</p>
+            </div>!-->
+        </div>
+    </div>
+    <footer>
+        <div >
+            <p class="guide">Productos</p>
+            <ul>
+               <li><a href="">Motorola</a></li>
+               <li><a href="">Samsung</a></li>
+               <li><a href="">Iphone</a></li>
+               <li><a href="">Zte</a></li> 
+            </ul>
+        </div> 
+        <div >
+            <p class="guide">Ayuda e información</p>
+            <ul>
+               <li><a href="">Sobre Nosotros</a></li>
+               <li><a href="">Preguntas Frecuentes</a></li>
+               <li><a href="">Términos y condiciones</a></li>
+               <li><a href="">Políticas de privacidad</a></li> 
+               <li><a href="">Políticas de devolución</a></li> 
+            </ul>
+        </div>
+        <div class="class-footer">
+            <div class="footer-contact">
+                <p class="name-footer">CompuCell</p>
+                <div>
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+                </div>
+            </div>
+            <p>2984565894</p>
+            <p>compucell@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="js/form.js"></script>
 </body>
 </html>

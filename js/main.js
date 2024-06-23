@@ -80,7 +80,7 @@ const products=[
         tipo: "Motorola",
         modelo:"Moto G13 128GB 4G",
         img: "src/img/moto-g13-128gb.png",
-        precio:272.800,
+        precio:272800,
         descuento:8,
         cuotasSinInteres:6
     },
@@ -145,15 +145,17 @@ function loadProducts(choseProducts){
     choseProducts.forEach(product =>{
         const div = document.createElement("div");
         div.classList.add("card");
-        const discountedPrice = Math.floor((product.precio - (product.precio * product.descuento / 100))).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        const discountedPrice = Math.floor(product.precio - (product.precio * product.descuento / 100));
+        const formattedDiscountedPrice = discountedPrice.toLocaleString("es-AR");
+        const formattedOriginalPrice = product.precio.toLocaleString("es-AR");
         div.innerHTML=`
             <h3>${product.tipo}</h3>
             <h4>${product.modelo}</h4>
             <img src=${product.img} alt="${product.modelo}">
             <div class="price-container">
                 <p class="discount">${product.descuento}% Off</p>
-                <p class="actual-price">$${discountedPrice}</p>
-                <p class="old-price">$${product.precio.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                <p class="actual-price">$${formattedDiscountedPrice}</p>
+                <p class="old-price">$${formattedOriginalPrice}</p>
             </div>
             <div class="installments-container">
                 <p>3 cuotasSinInteres</p>
@@ -222,8 +224,15 @@ function updateaddProductBtn(){
         btn.addEventListener("click", addToCart)
     });
 }
+let cartProducts; 
+let cartProductsLS = localStorage.getItem("cart-products");
+if(cartProductsLS){
+  cartProducts = JSON.parse(cartProductsLS);
+  refreshNumber();
+}else{
+    cartProducts = [];
+}
 
-const cartProducts = [];
 function addToCart(e){
     const idBtn = e.currentTarget.id;
     const addedProduct= products.find(product => product.id == idBtn);
@@ -234,10 +243,10 @@ function addToCart(e){
         addedProduct.cantidad=1;
         cartProducts.push(addedProduct);
     }
-    refreshNumbee();
+    refreshNumber();
     localStorage.setItem("cart-products", JSON.stringify(cartProducts));
 }
-function refreshNumbee(){
+function refreshNumber(){
     let newNumber = cartProducts.reduce((accumulator, product) =>accumulator + product.cantidad, 0);
     numberCart.innerText = newNumber;
 }

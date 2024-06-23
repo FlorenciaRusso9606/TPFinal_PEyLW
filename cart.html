@@ -24,58 +24,20 @@
       
         <div id="cart" class="cart">
             <p id="empty-cart">Tu carrito está vacío</p>
-            <div id="cart-items-container" class="cart-items-container">
-                <div id="cart-item" class="cart-item">
-                    <div class="cart-article">
-                        <p class="article-title">Artículo</p>
-                        <div class="description-item">
-                            <img src="src/img/moto-e22.png" alt="">
-                            <p>Samsung Galaxy A04 128 GB</p>
-                        </div>
-                    </div>
-                    <div class="cant-items">
-                        <p class="article-title">Cantidad</p>
-                        <div><span>1</span><button><i class="fa-solid fa-trash" style="color: #000000;"></i></button></div>
-                    </div>
-                    <div class="item-price">
-                        <p class="article-title">Precio</p>
-                        <p>$199999</p>
-                    </div>
-                </div>
-                <div id="cart-item" class="cart-item">
-                    <div class="cart-article">
-                        <p class="article-title">Artículo</p>
-                        <div class="description-item">
-                            <img src="src/img/moto-e22.png" alt="">
-                            <p>Samsung Galaxy A04 128 GB</p>
-                        </div>
-                    </div>
-                    <div class="cant-items">
-                        <p class="article-title">Cantidad</p>
-                        <div><span>1</span><i class="fa-solid fa-trash" style="color: #000000;"></i></div>
-                    </div>
-                    <div class="item-price">
-                        <p class="article-title">Precio</p>
-                        <p>$199999</p>
-                    </div>
-                </div>
+            <div id="cart-items-container" class="cart-items-container disabled">
             </div>
             
-            <div id="cart-actions" class="summary">
+            <div id="cart-actions" class="summary disabled">
                 <p class="summary-tittle">Resumen de compra</p>
-                <div class="summary-subtotal">
-                    <p class="summary-subtotal-tittle">Subtotal</p>
-                    <p class="summary-subtotal-price">$199999</p>
-                </div>
                 <div class="summary-total">
                     <p class="summary-total-tittle">Total</p>
-                    <p>$199999</p>
+                    <p id="total"></p>
                 </div>
-                <button class="buy-articles">Finalizar compra</button>
+                <button class="back-shopping"><a href="">Finalizar compra</a></button>
             </div>
-           
-           
+          
         </div>
+        <button class="back-shopping"><a href="index.html">Seguir comprando</a></button>
     </main>
     
     <footer>
