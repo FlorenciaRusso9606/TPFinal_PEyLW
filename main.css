@@ -704,6 +704,7 @@ footer div ul li{
     width: 170px;
     align-self: center;
     margin: 2rem 0;
+    margin-right: 10px;
 }
 .form-container  button a{
     text-decoration: none;
@@ -807,5 +808,6 @@ footer div ul li{
 }
 .successful-purchase button {
     margin-top: 20px; 
+
 }
    
