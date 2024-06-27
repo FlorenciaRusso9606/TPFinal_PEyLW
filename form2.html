@@ -18,25 +18,25 @@
         <form id="payment-method-form">
             <div class="div-form">
                 <h2>Método de pago</h2>
-                <label for="numero-tarjeta">Número de tarjeta de crédito o débito *</label>
-                <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
-                <span id="numero-tarjeta-error" class="error"></span>
+                <label for="card-number">Número de tarjeta de crédito o débito *</label>
+                <input type="text" id="card-number" name="card-number" required>
+                <span id="card-number-error" class="error"></span>
     
-                <label for="fecha-expiracion">Fecha de expiración (MM/AAAA) *</label>
-                <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AAAA" required>
-                <span id="fecha-expiracion-error" class="error"></span>
+                <label for="expiration-date">Fecha de expiración (MM/AAAA) *</label>
+                <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/AAAA" required>
+                <span id="expiration-date-error" class="error"></span>
     
-                <label for="nombre-titular">Nombre del titular de la tarjeta *</label>
-                <input type="text" id="nombre-titular" name="nombre-titular" required>
-                <span id="nombre-titular-error" class="error"></span>
+                <label for="owner-name">Nombre del titular de la tarjeta *</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+                <span id="owner-name-error" class="error"></span>
     
-                <label for="codigo-seguridad">Código de seguridad (CVV) *</label>
-                <input type="text" id="codigo-seguridad" name="codigo-seguridad" required>
-                <span id="codigo-seguridad-error" class="error"></span>
+                <label for="safe-code">Código de seguridad (CVV) *</label>
+                <input type="text" id="safe-code" name="safe-code" required>
+                <span id="safe-code-error" class="error"></span>
     
-                <label for="numero-documento">Número de documento</label>
-                <input type="text" id="numero-documento" name="numero-documento">
-                <span id="numero-documento-error" class="error"></span>
+                <label for="document-number">Número de documento</label>
+                <input type="text" id="document-number" name="document-number">
+                <span id="document-number-error" class="error"></span>
                 <div>
                     <button class="buy-articles" onclick="window.location.href='form.html'">Atrás</button>
                 <button class="buy-articles" id="buy-articles" type="submit">Finalizar pedido</button>

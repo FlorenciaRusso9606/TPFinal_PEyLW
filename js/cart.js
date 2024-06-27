@@ -5,7 +5,6 @@ const cartActionsContainer = document.getElementById("cart-actions");
 const total = document.getElementById("total");
 
 function loadCartProducts() {
-    console.log('Cargando productos del carrito:', cartProducts);
 
     if (cartProducts && cartProducts.length > 0) {
         emptyCartContainer.classList.add("disabled");
@@ -43,7 +42,6 @@ function loadCartProducts() {
             cartItemsContainer.append(div);
         });
     } else {
-        console.log('El carrito está vacío');
         emptyCartContainer.classList.remove("disabled");
         cartItemsContainer.classList.add("disabled");
         cartActionsContainer.classList.add("disabled");

@@ -5,7 +5,6 @@ document.getElementById("payment-method-form").addEventListener("submit", functi
     const isValid = validateForm();
     
     if (isValid) {
-        alert("Pedido finalizado correctamente");
         buycart();
         window.location.href = 'confirmation.html';
 
@@ -19,40 +18,40 @@ function validateForm() {
     document.querySelectorAll(".error").forEach(span => span.textContent = '');
 
     // Valida número de tarjeta
-    const numeroTarjeta = document.getElementById("numero-tarjeta").value;
-    if (!/^[\d ]+$/.test(numeroTarjeta)) {
-        document.getElementById("numero-tarjeta-error").textContent = "Por favor, ingrese un número de tarjeta válido.";
+    const cardNumber = document.getElementById("card-number").value;
+    if (!/^[\d ]+$/.test(cardNumber)) {
+        document.getElementById("card-number-error").textContent = "Por favor, ingrese un número de tarjeta válido.";
         isValid = false;
     }
 
     // Valida fecha de expiración
-    const fechaExpiracion = document.getElementById("fecha-expiracion").value;
-    const regexFechaExpiracion = /^(0[1-9]|1[0-2])\/\d{4}$/;
-    if (!regexFechaExpiracion.test(fechaExpiracion)) {
-        document.getElementById("fecha-expiracion-error").textContent = "Por favor, ingrese una fecha de expiración válida (MM/AAAA).";
+    const expDate = document.getElementById("expiration-date").value;
+    const regexexpDate = /^(0[1-9]|1[0-2])\/\d{4}$/;
+    if (!regexexpDate.test(expDate)) {
+        document.getElementById("expiration-date-error").textContent = "Por favor, ingrese una fecha de expiración válida (MM/AAAA).";
         isValid = false;
     }
 
     // Valida nombre del titular
-    const nombreTitular = document.getElementById("nombre-titular").value;
+    const ownerName = document.getElementById("owner-name").value;
     const namePattern = /^[A-Za-z\s]+$/;
-    if (!namePattern.test(nombreTitular.trim())) {
-        document.getElementById("nombre-titular-error").textContent = "Por favor, ingrese un nombre válido (solo letras).";
+    if (!namePattern.test(ownerName.trim())) {
+        document.getElementById("owner-name-error").textContent = "Por favor, ingrese un nombre válido (solo letras).";
         isValid = false;
     }
 
     // Valida código de seguridad (CVV)
-    const codigoSeguridad = document.getElementById('codigo-seguridad').value;
+    const safeCode = document.getElementById('safe-code').value;
     const codigoPattern = /^\d{3,4}$/;
-    if (!codigoPattern.test(codigoSeguridad)) {
-        document.getElementById("codigo-seguridad-error").textContent = "Por favor, ingrese un código de seguridad válido (3 o 4 dígitos).";
+    if (!codigoPattern.test(safeCode)) {
+        document.getElementById("safe-code-error").textContent = "Por favor, ingrese un código de seguridad válido (3 o 4 dígitos).";
         isValid = false;
     }
 
-    // Valida número de documento (opcional)
-    const documento = document.getElementById("numero-documento").value;
+    // Valida número de document (opcional)
+    const documento = document.getElementById("document-number").value;
     if (documento.trim() === "" || isNaN(documento) || !(documento > 1000000 && documento < 99000000)) {
-        document.getElementById("numero-documento-error").textContent = "Por favor, ingrese un documento válido.";
+        document.getElementById("document-number-error").textContent = "Por favor, ingrese un document válido.";
         isValid = false;
     }
     return isValid;

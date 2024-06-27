@@ -45,11 +45,7 @@
                 <button type="button" class="cart-btn icon-btn">
                     <a href="cart.html"><i class="fa-solid fa-shopping-cart"></i><span id="number" class="number">0</span></a>
                 </button>
-                <button type="button" class="open-menu-btn">
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </button>
+          
             </div>
         </div>
     </header>
@@ -65,28 +61,37 @@
                    <div class="brand-filter">
                        <h3>Marca</h3>
                        <ul>
-                           <li><button id="Samsung" class="category-btn active">Samsung</button></li>
+                           <li><button id="Samsung" class="category-btn ">Samsung</button></li>
                            <li><button id="Motorola" class="category-btn">Motorola</button></li>
                            <li><button id="TCL" class="category-btn">TCL</button></li>
                            <li><button id="Xiaomi" class="category-btn">Xiaomi</button></li>
                            <li><button id="ZTE" class="category-btn">ZTE</button></li>
-                           <li><button id="all" class="category-btn">Todas las marcas</button></li>
+                           <li><button id="all" class="category-btn active">Todas las marcas</button></li>
                        </ul>
                    </div>
                    <div class="price-filter">
                         <h3>Precio</h3>
                         <ul>
-                            <li><button class="price-btn active">$0 - $300.000</button></li>
+                            <li><button class="price-btn ">$0 - $300.000</button></li>
                             <li><button class="price-btn">$300.000 - $600.000</button></li>
                             <li><button class="price-btn">$600.000 - $1.000.000</button></li>
                             <li><button class="price-btn">$1.000.000 - $1.500.000</button></li>
-                            <li><button class="price-btn">$0 - $1.500.000</button></li>
+                            <li><button class="price-btn active">$0 - $1.500.000</button></li>
                         </ul>
                     </div>        
             </aside>
             <div class="products-container" id="products-container"></div>
-    
+           
         </div>
+        <div class="container-comparison">
+           
+            <div id="comparison-container">
+                <div id="comparison-product-1"></div>
+                <div id="comparison-product-2"></div>
+            </div>
+             <button id="compare-btn" disabled>Comparar</button>
+        </div>
+      
         
     </main>
     <footer>

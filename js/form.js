@@ -1,5 +1,5 @@
 document.getElementById("payment-form").addEventListener("input", validateForm);
-        
+
 function validateForm() {
     let isValid = true;
 
@@ -15,17 +15,17 @@ function validateForm() {
     }
 
     // Validar nombre
-    const nombre = document.getElementById('nombre').value;
+    const name = document.getElementById('name').value;
     const namePattern = /^[A-Za-z\s]+$/;
-    if (!namePattern.test(nombre.trim())) {
-        document.getElementById("nombre-error").textContent = "Por favor, ingrese un nombre válido (solo letras).";
+    if (!namePattern.test(name.trim())) {
+        document.getElementById("name-error").textContent = "Por favor, ingrese un nombre válido (solo letras).";
         isValid = false;
     }
 
     // Validar apellido
-    const apellido = document.getElementById("apellido").value;
-    if (!namePattern.test(apellido.trim())) {
-        document.getElementById("apellido-error").textContent = "Por favor, ingrese un apellido válido (solo letras).";
+    const lastname = document.getElementById("lastname").value;
+    if (!namePattern.test(lastname.trim())) {
+        document.getElementById("lastname-error").textContent = "Por favor, ingrese un apellido válido (solo letras).";
         isValid = false;
     }
 
@@ -37,17 +37,17 @@ function validateForm() {
     }
 
     // Validar género
-    const genero = document.getElementById("genero").value;
-    if (genero === '') {
-        document.getElementById("genero-error").textContent = "Por favor, seleccione su género.";
+    const gender = document.getElementById("gender").value;
+    if (gender === '') {
+        document.getElementById("gender-error").textContent = "Por favor, seleccione su género.";
         isValid = false;
     }
 
     // Validar fecha de nacimiento
-    const fechaNacimiento = document.getElementById("fecha-nacimiento").value;
+    const fechaNacimiento = document.getElementById("birth-date").value;
     const regexFechaNacimiento = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
     if (!regexFechaNacimiento.test(fechaNacimiento)) {
-        document.getElementById("fecha-nacimiento-error").textContent = "Por favor, ingrese una fecha de nacimiento válida (DD/MM/AAAA).";
+        document.getElementById("birth-date-error").textContent = "Por favor, ingrese una fecha de nacimiento válida (DD/MM/AAAA).";
         isValid = false;
     } else {
         const partesFecha = fechaNacimiento.split('/');
@@ -56,22 +56,22 @@ function validateForm() {
         const anio = parseInt(partesFecha[2], 10);
         const fecha = new Date(anio, mes, dia);
         if (fecha.getFullYear() !== anio || fecha.getMonth() !== mes || fecha.getDate() !== dia) {
-            document.getElementById("fecha-nacimiento-error").textContent = "Por favor, ingrese una fecha de nacimiento real.";
+            document.getElementById("birth-date-error").textContent = "Por favor, ingrese una fecha de nacimiento real.";
             isValid = false;
         }
     }
 
     // Validar teléfono
-    const telefono = document.getElementById("telefono").value;
-    if (!/^\d{10}$/.test(telefono)) {
-        document.getElementById("telefono-error").textContent = "Por favor, ingrese un número de teléfono válido (10 dígitos).";
+    const phone = document.getElementById("phone").value;
+    if (!/^\d{10}$/.test(phone)) {
+        document.getElementById("phone-error").textContent = "Por favor, ingrese un número de teléfono válido (10 dígitos).";
         isValid = false;
     }
 
     // Validar calle
-    const calle = document.getElementById("calle").value;
-    if (calle.trim() === '') {
-        document.getElementById("calle-error").textContent = "Por favor, ingrese su calle.";
+    const street = document.getElementById("street").value;
+    if (street.trim() === '') {
+        document.getElementById("street-error").textContent = "Por favor, ingrese su calle.";
         isValid = false;
     }
 
@@ -83,23 +83,23 @@ function validateForm() {
     }
 
     // Validar provincia
-    const provincia = document.getElementById("provincia").value;
-    if (!namePattern.test(provincia.trim())) {
-        document.getElementById("provincia-error").textContent = "Por favor, ingrese una provincia válida (solo letras).";
+    const province = document.getElementById("province").value;
+    if (!namePattern.test(province.trim())) {
+        document.getElementById("province-error").textContent = "Por favor, ingrese una provincia válida (solo letras).";
         isValid = false;
     }
 
     // Validar localidad
-    const localidad = document.getElementById("localidad").value;
-    if (!namePattern.test(localidad.trim())) {
-        document.getElementById("localidad-error").textContent = "Por favor, ingrese una localidad válida (solo letras).";
+    const location = document.getElementById("location").value;
+    if (!namePattern.test(location.trim())) {
+        document.getElementById("location-error").textContent = "Por favor, ingrese una localidad válida (solo letras).";
         isValid = false;
     }
 
     // Validar método de envío
-    const metodoEnvio = document.querySelector('input[name="metodo-envio"]:checked');
+    const metodoEnvio = document.querySelector('input[name="send-method"]:checked');
     if (!metodoEnvio) {
-        document.getElementById("metodo-envio-error").textContent = "Por favor, seleccione un método de envío.";
+        document.getElementById("send-method-error").textContent = "Por favor, seleccione un método de envío.";
         isValid = false;
     }
 
@@ -110,8 +110,10 @@ function validateForm() {
 }
 
 document.getElementById("payment-form").addEventListener("submit", function(event) {
-    if (!validateForm()) {
-        event.preventDefault(); // Prevenir el envío del formulario si no es válido
+    event.preventDefault(); // Prevenir el envío del formulario para controlarlo manualmente
+    if (validateForm()) {
+        // Si el formulario es válido, redirigir a la siguiente página
+        window.location.href = 'form2.html';
     }
 });
 
@@ -123,7 +125,6 @@ cartProducts = JSON.parse(cartProducts); // Convierte los productos de JSON a ob
 const subtotal = document.getElementById("subtotal"); 
 const total = document.getElementById("total"); 
 const summaryContainer = document.getElementById("summary"); 
-const buyArticlesBtn = document.getElementById("buy-articles"); 
 
 // Cargar los productos en el resumen
 function loadCartProducts() {
@@ -148,5 +149,6 @@ function updateTotal() {
     subtotal.textContent = `$${calculatedSubtotal}`; // Actualiza el texto del subtotal en el DOM
     total.textContent = `$${calculatedSubtotal}`; // Actualiza el texto del total en el DOM
 }
+
 // Cargar los productos al cargar la página
 loadCartProducts();
