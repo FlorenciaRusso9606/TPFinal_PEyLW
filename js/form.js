@@ -50,12 +50,12 @@ function validateForm() {
         document.getElementById("birth-date-error").textContent = "Por favor, ingrese una fecha de nacimiento válida (DD/MM/AAAA).";
         isValid = false;
     } else {
-        const partesFecha = fechaNacimiento.split('/');
-        const dia = parseInt(partesFecha[0], 10);
-        const mes = parseInt(partesFecha[1], 10) - 1;
-        const anio = parseInt(partesFecha[2], 10);
-        const fecha = new Date(anio, mes, dia);
-        if (fecha.getFullYear() !== anio || fecha.getMonth() !== mes || fecha.getDate() !== dia) {
+        const partsDate = fechaNacimiento.split('/');
+        const day = parseInt(partsDate[0], 10);
+        const month = parseInt(partsDate[1], 10) - 1;
+        const year = parseInt(partsDate[2], 10);
+        const fecha = new Date(year, month, day);
+        if (fecha.getFullYear() !== year || fecha.getMonth() !== month || fecha.getDate() !== day) {
             document.getElementById("birth-date-error").textContent = "Por favor, ingrese una fecha de nacimiento real.";
             isValid = false;
         }
@@ -63,7 +63,8 @@ function validateForm() {
 
     // Validar teléfono
     const phone = document.getElementById("phone").value;
-    if (!/^\d{10}$/.test(phone)) {
+    const phonePattern =/^\d{10}$/
+    if (!phonePattern.test(phone)) {
         document.getElementById("phone-error").textContent = "Por favor, ingrese un número de teléfono válido (10 dígitos).";
         isValid = false;
     }

@@ -262,19 +262,11 @@ function loadProducts(choseProducts){
             productsContainer.append(div); // Agregar el div al contenedor de productos
     })
     updateaddProductBtn(addProductsBtn); // Actualizar event listeners de botones "Agregar al carrito"
-    updateSelectProductBtn();
+    updateSelectProductBtn();// Actualizar event listeners de los botones de los productos seleccionados
 }
 loadProducts(products);
 
-// Función para filtrar productos según categoría y rango de precios seleccionados
-function filterProducts() {
-    const filteredProducts = products.filter(product => {
-        const inCategory = selectedCategory ? product.tipo === selectedCategory : true;
-        const inPriceRange = product.precio >= selectedPriceRange[0] && product.precio <= selectedPriceRange[1];
-        return inCategory && inPriceRange;
-    });
-    loadProducts(filteredProducts); // Cargar y mostrar los productos filtrados
-}
+
 // Event listeners para botones de categoría
 categoryBtn.forEach(btn => {
     btn.addEventListener("click", (e) => {        
@@ -312,6 +304,16 @@ priceBtn.forEach(btn => {
         filterProducts();
     });
 });
+// Función para filtrar productos según categoría y rango de precios seleccionados
+function filterProducts() {
+    const filteredProducts = products.filter(product => {
+        const inCategory = selectedCategory ? product.tipo === selectedCategory : true;
+        const inPriceRange = prtedProduct.precio >= seleciceRange[0] && product.precio <= selectedPriceRange[1];
+        return inCategory && inPriceRange;
+    });
+    loadProducts(filteredProducts); // Cargar y mostrar los productos filtrados
+}
+
 // Función para actualizar event listeners de botones "Agregar al carrito"
 function updateaddProductBtn(){
     addProductsBtn = document.querySelectorAll(".add-to-cart"); // Seleccionar todos los botones "Agregar al carrito"
@@ -359,8 +361,14 @@ const comparisonContainer1 = document.getElementById("comparison-product-1");
 const comparisonContainer2 = document.getElementById("comparison-product-2");
 
 
-
-function selectProduct(e) { //Maneja la lógica de selección y deselección de productos para la comparación.
+//Agrega event listeners a todos los botones de selección de productos.
+function updateSelectProductBtn() {
+    const selectProductBtns = document.querySelectorAll(".select-product");
+    selectProductBtns.forEach(btn => {
+        btn.addEventListener("click", selectProduct);
+    });
+}
+function selectProduct(e) { //Maneja la selección y deselección de productos para la comparación.
     const productId = e.currentTarget.getAttribute("data-id"); //Obtiene el id
     const selectedProduct = products.find(product => product.id == productId);
 
@@ -422,16 +430,11 @@ function removeProduct(e) {
     compareBtn.disabled = selectedProducts.length !== 2;
     saveSelectedProducts();
 }
-//Agrega event listeners a todos los botones de selección de productos.
-function updateSelectProductBtn() {
-    const selectProductBtns = document.querySelectorAll(".select-product");
-    selectProductBtns.forEach(btn => {
-        btn.addEventListener("click", selectProduct);
-    });
-}
+
 //Guarda los productos seleccionados y el estado del botón de comparar en el almacenamiento local.
 function saveSelectedProducts() {
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+    // Guarda el estado del botón de comparación en localStorage
     localStorage.setItem('compareBtnState', compareBtn.disabled ? 'disabled' : 'enabled');
 }
 
