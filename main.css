@@ -395,6 +395,12 @@ main div h1{
     border-radius: 5px;
     padding: 5px 15px;
 }
+.main-category{
+    margin: 0rem 5rem;
+}
+#cellphone-category{
+    margin: 2rem 0;
+}
 #compare-btn  {
     display: block;
     margin: 20px auto;

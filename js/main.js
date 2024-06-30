@@ -216,7 +216,6 @@ const products=[
 
 
 ]
-// Elementos del DOM
 const productsContainer = document.querySelector("#products-container");
 const categoryBtn = document.querySelectorAll(".category-btn");
 const priceBtn = document.querySelectorAll(".price-btn");
@@ -262,11 +261,19 @@ function loadProducts(choseProducts){
             productsContainer.append(div); // Agregar el div al contenedor de productos
     })
     updateaddProductBtn(addProductsBtn); // Actualizar event listeners de botones "Agregar al carrito"
-    updateSelectProductBtn();// Actualizar event listeners de los botones de los productos seleccionados
+    updateSelectProductBtn();
 }
 loadProducts(products);
 
-
+// Función para filtrar productos según categoría y rango de precios seleccionados
+function filterProducts() {
+    const filteredProducts = products.filter(product => {
+        const inCategory = selectedCategory ? product.tipo === selectedCategory : true;
+        const inPriceRange = product.precio >= selectedPriceRange[0] && product.precio <= selectedPriceRange[1];
+        return inCategory && inPriceRange;
+    });
+    loadProducts(filteredProducts); // Cargar y mostrar los productos filtrados
+}
 // Event listeners para botones de categoría
 categoryBtn.forEach(btn => {
     btn.addEventListener("click", (e) => {        
@@ -304,16 +311,6 @@ priceBtn.forEach(btn => {
         filterProducts();
     });
 });
-// Función para filtrar productos según categoría y rango de precios seleccionados
-function filterProducts() {
-    const filteredProducts = products.filter(product => {
-        const inCategory = selectedCategory ? product.tipo === selectedCategory : true;
-        const inPriceRange = prtedProduct.precio >= seleciceRange[0] && product.precio <= selectedPriceRange[1];
-        return inCategory && inPriceRange;
-    });
-    loadProducts(filteredProducts); // Cargar y mostrar los productos filtrados
-}
-
 // Función para actualizar event listeners de botones "Agregar al carrito"
 function updateaddProductBtn(){
     addProductsBtn = document.querySelectorAll(".add-to-cart"); // Seleccionar todos los botones "Agregar al carrito"
@@ -333,22 +330,25 @@ if(cartProductsLS){
 }
 // Función para agregar un producto al carrito
 function addToCart(e){
-    const idBtn = e.currentTarget.id; //captura el id del boton
-    const addedProduct= products.find(product => product.id == idBtn); //Encuentra el producto en el array de productos utilizando el id obtenido
-    if(cartProducts.some(product => product.id == idBtn)){ // Buscar si el producto está en el array del carrito
-        const index = cartProducts.findIndex(product => product.id == idBtn); // Si está guardá el index
-        cartProducts[index].cantidad++; // Agregar una cantidad más al producto en el array
+    const idBtn = e.currentTarget.id;
+    const addedProduct= products.find(product => product.id == idBtn);
+    if(cartProducts.some(product => product.id == idBtn)){
+        const index = cartProducts.findIndex(product => product.id == idBtn);
+        cartProducts[index].cantidad++;
     }else{
-        addedProduct.cantidad=1; // Si no está el producto en el carrito se crea la cantidad 1
-        cartProducts.push(addedProduct); // Agregar el producto al array 
+        addedProduct.cantidad=1;
+        cartProducts.push(addedProduct);
     }
-    refreshNumber(); // Actualizar el número del carrito de compras
-    localStorage.setItem("cart-products", JSON.stringify(cartProducts)); //Actualizar el localStorage
+    refreshNumber();
+    localStorage.setItem("cart-products", JSON.stringify(cartProducts));
 }
 function refreshNumber(){
     let newNumber = cartProducts.reduce((accumulator, product) =>accumulator + product.cantidad, 0);
     numberCart.innerText = newNumber;
 }
+
+
+
 
 
 
